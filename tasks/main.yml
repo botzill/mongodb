@@ -1,9 +1,9 @@
 ---
-- hosts: all
-  tasks:
-    - name: Debug inventory_hostname
-      debug:
-        msg: "The current inventory hostname is {{ inventory_hostname }}"
+
+
+- name: Debug inventory_hostname
+  debug:
+    msg: "The current inventory hostname is {{ inventory_hostname }}"
 #
 #- name: Remove legacy keys
 #  loop:
