@@ -21,8 +21,10 @@ storage:
   dbPath: {{ mongodb_storage_path }}
   directoryPerDB: {{ mongodb_storage_dirperdb | lower }}
   engine: {{ mongodb_storage_engine }}
+  {% if mongodb_storage_journal_enabled | default(False) %}
   journal:
     enabled: {{ mongodb_storage_journal_enabled | lower }}
+  {% endif %}
 {% if mongodb_storage_engine == 'mmapv1' %}
   mmapv1:
     quota:
